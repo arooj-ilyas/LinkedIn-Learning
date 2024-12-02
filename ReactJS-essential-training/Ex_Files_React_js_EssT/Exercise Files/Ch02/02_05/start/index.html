@@ -1,3 +1,6 @@
+<!-- JSX can be used to inject dynamic content into tags by referencing variables -->
+<!-- NOTE: JSX expressions can be used with all sorts of functions inside the curly brace (i.e. toUpperCase) allows you to make code dynamic -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,11 +20,16 @@
     <div id="root"></div>
 
     <script type="text/babel">
+      let robot = "🤖";
+      let cowboy = "🤠";
+      let moon = "🌝";
+      let name = "React";
       ReactDOM.render(
         <ul>
-          <li>🤖</li>
-          <li>🤠</li>
-          <li>🌝</li>
+          <li>{robot}</li>
+          <li>{cowboy}</li>
+          <li>{moon}</li>
+          <li>{name.toUpperCase()}</li>
         </ul>,
         document.getElementById("root")
       );
