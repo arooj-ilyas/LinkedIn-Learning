@@ -1,5 +1,6 @@
 <!-- Components are like building blocks, piece of UI used to describe one part of app and make it simpler to read -->
-<!-- Create components as functions; a JS function which returns JSX -->
+<!-- Create components as functions (should be a capital letter); a JS function which returns JSX -->
+<!-- React always wants to render a single component, either wrap in a single div or put everything inside App() which is a single component rendering all other components -->
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +28,21 @@
           </header>
         );
       }
-      ReactDOM.render(<Header />, document.getElementById("root"));
+
+      function Main() {
+        return (
+          <section>
+            <p>We serve the most delicious food around</p>
+          </section>
+        );
+      }
+      ReactDOM.render(
+        <div>
+          <Header />
+          <Main />
+        </div>,
+        document.getElementById("root")
+      );
     </script>
   </body>
 </html>
