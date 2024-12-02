@@ -27,10 +27,10 @@
           </header>
         );
       }
-      function Main() {
+      function Main(props) {
         return (
           <section>
-            <p>We serve the most delicious food around</p>
+            <p>We serve the most {props.adjective} food around.</p>
           </section>
         );
       }
@@ -38,7 +38,7 @@
         return (
           <div>
             <Header name="Arooj" />
-            <Main />
+            <Main adjective="amazing" />
           </div>
         );
       }
