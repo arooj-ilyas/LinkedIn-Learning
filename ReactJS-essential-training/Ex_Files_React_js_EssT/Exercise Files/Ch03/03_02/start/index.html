@@ -33,10 +33,10 @@
           </section>
         );
       }
-      function Footer() {
+      function Footer(props) {
         return (
           <footer>
-            <p>Copyright 2005</p>
+            <p>Copyright {props.year}</p>
           </footer>
         );
       }
@@ -45,7 +45,7 @@
           <div>
             <Header name="Arooj" />
             <Main adjective="amazing" />
-            <Footer />
+            <Footer year={2005} />
           </div>
         );
       }
