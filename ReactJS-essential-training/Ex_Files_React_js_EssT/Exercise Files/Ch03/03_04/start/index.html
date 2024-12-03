@@ -1,3 +1,5 @@
+<!-- Each child within a list should have a unique key prop; or a red console error will appear -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,28 +49,20 @@
       const dishes = [
         "Black Bean Soup",
         "Macaroni and Cheese",
-        "Salmon and Potatoes"
+        "Salmon and Potatoes",
       ];
 
       function App() {
         return (
           <div>
             <Header name="Cindy" />
-            <Main
-              adjective="amazing"
-              dishes={dishes}
-            />
-            <Footer
-              year={new Date().getFullYear()}
-            />
+            <Main adjective="amazing" dishes={dishes} />
+            <Footer year={new Date().getFullYear()} />
           </div>
         );
       }
 
-      ReactDOM.render(
-        <App />,
-        document.getElementById("root")
-      );
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
