@@ -1,4 +1,13 @@
 <!-- Each child within a list should have a unique key prop; or a red console error will appear -->
+<!-- This is necessary because things might get out of sync when rendering occurs, especially if something is added to front or middle of list -->
+<!-- Think of a key like an ID which keeps everything in sync -->
+<!-- You culd use index position as a key when mapping, but react docs advise against this as could still cause issues when rendering, aka becomes counter-intuitive -->
+
+<!-- The recommended approach: perform a data transformation for each item in the array to be in its own object, with a corresponding id and title value -->
+<!-- Whenever you return an object from an arrow function, we need to point that arrow function to a set of parenthesis rather than the direct object -->
+
+<!-- By creating a data transformation, data is STABLE (i.e. not being key'd with index while rendering) -->
+<!-- Keys help keep data in sync as your application changes over time -->
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +40,7 @@
           <section>
             <ul>
               {props.dishes.map((dish) => (
-                <li>{dish}</li>
+                <li key={dish.id}>{dish.title}</li>
               ))}
             </ul>
           </section>
@@ -53,11 +62,16 @@
         "Pizza",
       ];
 
+      const dishObject = dishes.map((dish, i) => ({
+        id: i,
+        title: dish,
+      }));
+
       function App() {
         return (
           <div>
             <Header name="Cindy" />
-            <Main adjective="amazing" dishes={dishes} />
+            <Main adjective="amazing" dishes={dishObject} />
             <Footer year={new Date().getFullYear()} />
           </div>
         );
