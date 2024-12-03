@@ -1,5 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+// Typically components are kept inside of their own files
+// General format -> create a function, export function as default (one function per component)
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
