@@ -15,11 +15,12 @@ function App() {
     useEffects take in two arguments...
     1: empty function -> define what effect we want to happen
     2: dependency array -> when the effect is actually being called
-    ---> if you pass in an empty array [], it means it will only happen on mount (e.g. when app is first rendered once and not going to be called again)
+    ---> Pass in an empty array [], it means it will only happen on mount (e.g. when app is first rendered once and not going to be called again)
+    ---> OR: Pass in a property/state value to listen to any changes in the array
   */
   useEffect(() => {
     console.log(`It's ${emotion} right now`);
-  }, []);
+  }, [emotion]);
 
   return (
     <div className="App">
