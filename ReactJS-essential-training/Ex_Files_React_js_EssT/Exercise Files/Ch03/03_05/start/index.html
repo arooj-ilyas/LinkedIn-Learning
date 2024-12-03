@@ -1,4 +1,6 @@
 <!-- Learn to add an image to a react application usng pexels.com (Free stock image website) -->
+<!-- By default, number value as a height prop is px's, and adding an alt tag makes it more accessible for screen readers -->
+<!-- Where possible, access images locally rather than via 3rd party url -->
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +31,11 @@
       function Main(props) {
         return (
           <section>
-            <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg" />
+            <img
+              height={200}
+              src="./restaurant.jpg"
+              alt="A white tablecloth dinner setting with fancy blue velvet chairs and a wine display in the background"
+            />
             <ul>
               {props.dishes.map((dish) => (
                 <li key={dish.id}>{dish.title}</li>
