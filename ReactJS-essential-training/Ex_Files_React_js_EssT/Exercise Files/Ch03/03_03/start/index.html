@@ -28,9 +28,11 @@
       }
       function Main(props) {
         return (
-          <section>
-            <p>We serve the most {props.adjective} food around.</p>
-          </section>
+          <ul>
+            {desserts.map((dessert) => (
+              <li>{dessert}</li>
+            ))}
+          </ul>
         );
       }
 
