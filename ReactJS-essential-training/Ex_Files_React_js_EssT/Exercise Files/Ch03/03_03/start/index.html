@@ -1,3 +1,5 @@
+<!-- Beyond strings, numbers, booleans, etc. You can also display more complex data types like an array -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,10 +29,7 @@
       function Main(props) {
         return (
           <section>
-            <p>
-              We serve the most {props.adjective}{" "}
-              food around.
-            </p>
+            <p>We serve the most {props.adjective} food around.</p>
           </section>
         );
       }
@@ -43,22 +42,24 @@
         );
       }
 
+      const desserts = [
+        "Banana Pudding",
+        "Chocolate Chip Cookies",
+        "Marble Cake",
+        "Lemon Loaf",
+      ];
+
       function App() {
         return (
           <div>
             <Header name="Cindy" />
             <Main adjective="amazing" />
-            <Footer
-              year={new Date().getFullYear()}
-            />
+            <Footer year={new Date().getFullYear()} />
           </div>
         );
       }
 
-      ReactDOM.render(
-        <App />,
-        document.getElementById("root")
-      );
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
