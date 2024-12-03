@@ -1,4 +1,5 @@
 <!-- Beyond strings, numbers, booleans, etc. You can also display more complex data types like an array -->
+<!-- You can send this complex data to be accessed via props -->
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,7 @@
       function Main(props) {
         return (
           <ul>
-            {desserts.map((dessert) => (
+            {props.desserts.map((dessert) => (
               <li>{dessert}</li>
             ))}
           </ul>
@@ -55,7 +56,7 @@
         return (
           <div>
             <Header name="Cindy" />
-            <Main adjective="amazing" />
+            <Main adjective="amazing" desserts={desserts} />
             <Footer year={new Date().getFullYear()} />
           </div>
         );
