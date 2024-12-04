@@ -17,6 +17,9 @@ function App() {
       <h1>Current emotion is {emotion}</h1>
       <button onClick={() => setEmotion("sad")}>Sad</button>
       <button onClick={() => setEmotion("excited")}>Excited</button>
+
+      <h2>Secondary emotion is {secondary}</h2>
+      <button>Grateful</button>
     </div>
   );
 }
