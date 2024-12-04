@@ -3,6 +3,7 @@
 - Goal is that any time we change the status, it changes the output
   - The way to appraoch this is we want to call onChange which calls setChecked.
   - This will take a look at whatever the value of checked is (true or false) and return the opposite
+  - We want to have out label reflect that change by checking if checked is true and displaying the corresponding msg (use ? and :)
 */
 
 import "./App.css";
@@ -20,7 +21,7 @@ function App() {
           setChecked((checked) => !checked);
         }}
       ></input>
-      <label>Checked</label>
+      <label>{checked ? "Checked" : "Not Checked"}</label>
     </div>
   );
 }
