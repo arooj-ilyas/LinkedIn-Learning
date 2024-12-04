@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     console.log(`It's ${emotion} around here!`);
-  }, [emotion]);
+  }, [emotion, secondary]);
 
   useEffect(() => {
     console.log(`It's ${secondary} around here!`);
