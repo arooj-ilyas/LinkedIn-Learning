@@ -3,10 +3,15 @@
 */
 
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <input type="checkbox"></input>
+      <label>Checked</label>
+    </div>
+  );
 }
 
 export default App;
