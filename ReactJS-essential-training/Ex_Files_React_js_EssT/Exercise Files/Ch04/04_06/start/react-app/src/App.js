@@ -12,6 +12,10 @@ function App() {
     console.log(`It's ${emotion} around here!`);
   }, [emotion]);
 
+  useEffect(() => {
+    console.log(`It's ${secondary} around here!`);
+  }, [secondary]);
+
   return (
     <div className="App">
       <h1>Current emotion is {emotion}</h1>
