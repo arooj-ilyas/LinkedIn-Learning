@@ -1,5 +1,7 @@
 // You can also manage forms using state when the inputs are controlled
 // Anytime useRef is being used, we are creating an uncontrolled component (manage form elements outside of state)
+// When we use useState; we want to trigger some kind of onChange events for our inputs to set the values once form is submitted
+// With states in forms, we want to set state back to default once function is performed as we have prevented default
 
 import "./App.css";
 import { useState } from "react";
