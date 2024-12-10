@@ -1,3 +1,8 @@
+/*
+In this lesson:
+- going to actually display data in our component
+*/
+
 import "./App.css";
 import { useState, useEffect } from "react";
 
