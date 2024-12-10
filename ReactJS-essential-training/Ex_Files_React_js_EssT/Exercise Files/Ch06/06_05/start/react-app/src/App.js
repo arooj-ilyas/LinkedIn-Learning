@@ -13,10 +13,32 @@ const tahoe_peaks = [
 
 // renderItem will be used to render an individual list item
 // renderList will be what we display if we don't have anything in this list
-function List({ data, renderItem, renderEmpty }) {}
+function List({ data, renderItem, renderEmpty }) {
+  // if there is nothing in the data, display renderEmpty otherwise return an unordered list where we map over the data
+  return !data.length ? (
+    renderEmpty
+  ) : (
+    <ul>
+      {data.map((item) => (
+        <li key={item.name}>{renderItem(item)}</li>
+      ))}
+    </ul>
+  );
+}
 
+// Always try to think of all use cases; e.g. here we are passing along some JSX as fallback content to render if the data was empty
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <List
+      data={tahoe_peaks}
+      renderEmpty={<p>This list is empty</p>}
+      renderItem={(item) => (
+        <>
+          {item.name} - {item.elevation}ft
+        </>
+      )}
+    />
+  );
 }
 
 export default App;
