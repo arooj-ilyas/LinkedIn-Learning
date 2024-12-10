@@ -9,6 +9,7 @@ import { useState, useEffect } from "react"; // useState to handle data, useEffe
 function App() {
   // Create container to store data
   const [data, setData] = useState(null);
+  useEffect(() => {});
 
   return <h1>Data</h1>;
 }
