@@ -56,7 +56,7 @@ function App() {
   // we want to iterate over the data in the api
   return (
     <div>
-      {data.allLifts.map((lift) => (
+      {data.data.allLifts.map((lift) => (
         <Lift
           name={lift.name}
           elevationGain={lift.elevationGain}
