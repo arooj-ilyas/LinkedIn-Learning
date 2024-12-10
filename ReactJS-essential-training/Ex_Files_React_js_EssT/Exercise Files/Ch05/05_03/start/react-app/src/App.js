@@ -7,7 +7,7 @@
 
 -> MOST exciting thing about hooks = can create own custom hooks to be used within app! 
 - A custom hook is a function that always starts with the keyword 'use'
-- NOTE: want to use spread operator {...} sparingly, only when not pushing in too many elements
+- NOTE: want to use spread operator {...} sparingly, only when not pushing in too many properties
 */
 
 import "./App.css";
@@ -25,27 +25,18 @@ function App() {
     ];
   }
 
-  const [title, setTitle] = useState("");
-  const [color, setColor] = useState("#000000");
+  const [titleProps, resetTitle] = useInput("");
+  const [colorProps, resetColor] = useInput("#000000");
   const submit = (e) => {
     e.preventDefault();
-    alert(`${title}, ${color}`);
-    setTitle("");
-    setColor("#000000");
+    alert(`${titleProps.value}, ${colorProps.value}`);
+    resetTitle();
+    resetColor();
   };
   return (
     <form onSubmit={submit}>
-      <input
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-        type="text"
-        placeholder="color title..."
-      />
-      <input
-        value={color}
-        type="color"
-        onChange={(event) => setColor(event.target.value)}
-      />
+      <input {...titleProps} type="text" placeholder="color title..." />
+      <input {...colorProps} type="color" />
       <button>ADD</button>
     </form>
   );
