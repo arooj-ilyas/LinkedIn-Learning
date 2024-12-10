@@ -29,10 +29,14 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // we want to model the flow of data in our useEffect
   useEffect(() => {
+    setLoading(true);
     fetch(`https://api.github.com/users/arooj-ilyas`)
       .then((response) => response.json())
-      .then(setData);
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
   }, []);
   if (data)
     return (
