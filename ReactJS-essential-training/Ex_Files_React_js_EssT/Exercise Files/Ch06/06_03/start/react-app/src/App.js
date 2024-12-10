@@ -1,5 +1,6 @@
 /*
 - When fetching data from external API, our data can be in a few different states which can all be represented using useState hooks
+- Whenever we are making async requests, we need to handle a loading state where we are waiting on that data to come back, as well as a success and error state
 
 1 = Loading state
 - fetching data but hasn't yet come back
