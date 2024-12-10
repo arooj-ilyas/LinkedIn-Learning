@@ -17,6 +17,13 @@ query {
   }
 }`;
 
+// specify some options with methods, headers and body format to send query string when we send API request
+const opts = {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ query }),
+};
+
 function Lift({ name, elevationGain, status }) {
   return (
     <div>
@@ -35,7 +42,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://snowtooth.moonhighway.com/`)
+    fetch(`https://snowtooth.moonhighway.com/`, opts)
       .then((response) => response.json())
       .then(setData)
       .then(() => setLoading(false))
