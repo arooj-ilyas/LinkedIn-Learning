@@ -38,15 +38,18 @@ function App() {
       .then(() => setLoading(false))
       .catch(setError);
   }, []);
-  if (data)
-    return (
-      <GithubUser
-        name={data.name}
-        location={data.location}
-        avatar={data.avatar_url}
-      />
-    );
-  return <h1>Data</h1>;
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <pre>{JSON.stringify(error)}</pre>;
+  if (!data) return null;
+
+  return (
+    <GithubUser
+      name={data.name}
+      location={data.location}
+      avatar={data.avatar_url}
+    />
+  );
 }
 
 export default App;
