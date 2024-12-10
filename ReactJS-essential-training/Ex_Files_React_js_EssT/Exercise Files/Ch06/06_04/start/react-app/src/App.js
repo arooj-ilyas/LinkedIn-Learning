@@ -1,16 +1,29 @@
 /*
-- We can also fetch data from a graphQL api
+- We can also fetch data from a graphQL API -> a way of creating an API where you can specify what data you want by using its field 
+- As well as passing data to the component, we need to pass the query
+- We need to make the fetch request more robust to send along the body of the query so we are not just getting all the data from the api 
+  - We need to send the query we want to get all the info we want back 
 */
 
 import "./App.css";
 import { useState, useEffect } from "react";
 
-function GithubUser({ name, location, avatar }) {
+const query = `
+query {
+  allLifts{
+    name,
+    elevationGain,
+    status
+  }
+}`;
+
+function Lift({ name, elevationGain, status }) {
   return (
     <div>
       <h1>{name}</h1>
-      <p>{location}</p>
-      <img src={avatar} height={150} alt={name} />
+      <p>
+        {elevationGain} {status}
+      </p>
     </div>
   );
 }
@@ -22,7 +35,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://api.github.com/users/arooj-ilyas`)
+    fetch(`https://snowtooth.moonhighway.com/`)
       .then((response) => response.json())
       .then(setData)
       .then(() => setLoading(false))
@@ -32,12 +45,18 @@ function App() {
   if (loading) return <h1>Loading...</h1>;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
+
+  // we want to iterate over the data in the api
   return (
-    <GithubUser
-      name={data.name}
-      location={data.location}
-      avatar={data.avatar_url}
-    />
+    <div>
+      {data.allLifts.map((lift) => (
+        <Lift
+          name={lift.name}
+          elevationGain={lift.elevationGain}
+          status={lift.status}
+        />
+      ))}
+    </div>
   );
 }
 
