@@ -4,18 +4,7 @@
 */
 
 import "./App.css";
-import { useState } from "react";
-
-function useInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
-  return [
-    {
-      value,
-      onChange: (e) => setValue(e.target.value),
-    },
-    () => setValue(initialValue),
-  ];
-}
+import { useState, useEffect } from "react";
 
 function App() {
   const [titleProps, resetTitle] = useInput("");
