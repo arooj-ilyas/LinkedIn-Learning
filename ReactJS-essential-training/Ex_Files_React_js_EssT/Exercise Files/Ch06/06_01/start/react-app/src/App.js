@@ -7,6 +7,9 @@ import "./App.css";
 import { useState, useEffect } from "react"; // useState to handle data, useEffect to make that call for that external data
 
 function App() {
+  // Create container to store data
+  const [data, setData] = useState(null);
+
   return <h1>Data</h1>;
 }
 
