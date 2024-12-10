@@ -1,6 +1,7 @@
 /*
-In this lesson:
-- going to actually display data in our component
+In this lesson -> going to actually display data in our component
+- Regardless of what data you are fetching and from where, the first step you need to take is fetching the data using a combination of useState and useEffect 
+- Then use the magic of react to pass props down to a child component and pull from data points we need to display data we need
 */
 
 import "./App.css";
