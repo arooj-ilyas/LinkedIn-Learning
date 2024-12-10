@@ -16,8 +16,8 @@ function App() {
       .then((response) => response.json())
       // then we are going to chain on another dot function which will setData to the response in the correct format
       .then(setData);
-  }, []);
-
+  }, []); // only fetch that data once, when application first renders to avoid making too many API requests
+  if (data) return <pre>{JSON.stringify(data, null, 2)}</pre>;
   return <h1>Data</h1>;
 }
 
