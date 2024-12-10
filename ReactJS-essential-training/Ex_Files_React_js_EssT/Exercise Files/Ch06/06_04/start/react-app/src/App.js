@@ -1,3 +1,7 @@
+/*
+- We can also fetch data from a graphQL api
+*/
+
 import "./App.css";
 import { useState, useEffect } from "react";
 
@@ -18,9 +22,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://api.github.com/users/moonhighway`
-    )
+    fetch(`https://api.github.com/users/arooj-ilyas`)
       .then((response) => response.json())
       .then(setData)
       .then(() => setLoading(false))
@@ -28,8 +30,7 @@ function App() {
   }, []);
 
   if (loading) return <h1>Loading...</h1>;
-  if (error)
-    return <pre>{JSON.stringify(error)}</pre>;
+  if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
   return (
     <GithubUser
