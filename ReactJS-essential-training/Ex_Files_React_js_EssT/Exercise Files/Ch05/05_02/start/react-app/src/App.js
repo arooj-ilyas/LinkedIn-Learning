@@ -1,3 +1,6 @@
+// You can also manage forms using state when the inputs are controlled
+// Anytime useRef is being used, we are creating an uncontrolled component (manage form elements outside of state)
+
 import "./App.css";
 import { useState } from "react";
 
@@ -14,18 +17,14 @@ function App() {
     <form onSubmit={submit}>
       <input
         value={title}
-        onChange={(event) =>
-          setTitle(event.target.value)
-        }
+        onChange={(event) => setTitle(event.target.value)}
         type="text"
         placeholder="color title..."
       />
       <input
         value={color}
         type="color"
-        onChange={(event) =>
-          setColor(event.target.value)
-        }
+        onChange={(event) => setColor(event.target.value)}
       />
       <button>ADD</button>
     </form>
