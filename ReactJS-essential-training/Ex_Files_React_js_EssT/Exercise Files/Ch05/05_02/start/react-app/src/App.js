@@ -7,6 +7,7 @@ import { useState } from "react";
 function App() {
   const [title, setTitle] = useState("");
   const [color, setColor] = useState("#000000");
+
   const submit = (e) => {
     e.preventDefault();
     alert(`${title}, ${color}`);
