@@ -22,3 +22,5 @@ function App() {
 }
 
 export default App;
+
+// Next exercise: make use of actual data and create a component with it
