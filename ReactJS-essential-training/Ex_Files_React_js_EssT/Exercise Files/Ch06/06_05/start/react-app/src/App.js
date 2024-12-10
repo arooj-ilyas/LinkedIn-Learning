@@ -11,6 +11,10 @@ const tahoe_peaks = [
   { name: "Tallac", elevation: 9735 },
 ];
 
+// renderItem will be used to render an individual list item
+// renderList will be what we display if we don't have anything in this list
+function List({ data, renderItem, renderEmpty }) {}
+
 function App() {
   return <h1>Hello</h1>;
 }
