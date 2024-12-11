@@ -1,11 +1,17 @@
-import useReducer from "react";
+import { useReducer } from "react";
 
 export function Checkbox() {
   const [checked, setChecked] = useReducer((checked) => !checked, false);
   return (
     <>
-      <label>{checked ? "checked" : "not checked"}</label>
-      <input type="checkbox" value={checked} onChange={setChecked} />
+      {/* make sure to associate label with input */}
+      <label htmlFor="checked">{checked ? "checked" : "not checked"}</label>
+      <input
+        id="checked"
+        type="checkbox"
+        value={checked}
+        onChange={setChecked}
+      />
     </>
   );
 }
