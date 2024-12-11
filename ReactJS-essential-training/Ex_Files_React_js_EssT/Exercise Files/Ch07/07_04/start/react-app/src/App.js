@@ -2,6 +2,8 @@
 - Create a child page for our About component, working with nested links here
 - We want to call the History component within the About component, to mimic a heirarchy (can't access history from anywhere else)
 - Utilize 'Outlet' - https://api.reactrouter.com/v7/functions/react_router.Outlet.html
+  - Think about Outlet like a little container which is going to display our History component within our About container
+  - Without this outlet present, the container cannot appear 
 */
 
 import "./App.css";
@@ -28,6 +30,7 @@ export function About() {
         <Link to="/contact">Contact</Link>
       </nav>
       <h1>About Us</h1>
+      <Outlet />
     </div>
   );
 }
