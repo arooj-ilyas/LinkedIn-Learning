@@ -1,5 +1,5 @@
 /*
-- We want to write tests here for our Checkbox.js component using the test function from react testing library
+- We want to write tests here for our Checkbox.js component using the queries from react testing library and built in queries from jest
 - Utilize destructured queries - https://testing-library.com/docs/queries/about/
 */
 
