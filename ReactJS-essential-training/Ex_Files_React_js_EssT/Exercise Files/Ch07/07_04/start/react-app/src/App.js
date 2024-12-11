@@ -1,5 +1,6 @@
 /*
 - Create a child page for our About component, working with nested links here
+- We want to call the History component within the About component, to mimic a heirarchy (can't access history from anywhere else)
 */
 
 import "./App.css";
