@@ -1,10 +1,11 @@
 /*
 - Create a child page for our About component, working with nested links here
 - We want to call the History component within the About component, to mimic a heirarchy (can't access history from anywhere else)
+- Utilize 'Outlet' - https://api.reactrouter.com/v7/functions/react_router.Outlet.html
 */
 
 import "./App.css";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Home() {
   return (
