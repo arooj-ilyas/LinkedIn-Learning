@@ -1,6 +1,6 @@
 import "./App.css";
 
-export function Home() {
+function Home() {
   return (
     <div>
       <h1>My Website</h1>

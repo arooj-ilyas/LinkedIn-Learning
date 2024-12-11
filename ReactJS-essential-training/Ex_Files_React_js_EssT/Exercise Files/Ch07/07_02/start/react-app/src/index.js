@@ -15,6 +15,7 @@ ReactDOM.render(
     {/* Within this <Routes></Routes> is where we set up and configure all the routes we want to display */}
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
