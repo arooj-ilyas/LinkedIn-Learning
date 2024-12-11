@@ -20,3 +20,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+
+// Next exercise: Create links so user doesn't have to manually type in endpoint to reach desired component
