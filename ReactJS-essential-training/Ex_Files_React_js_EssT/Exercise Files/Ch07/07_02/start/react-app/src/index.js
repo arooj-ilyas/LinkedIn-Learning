@@ -6,9 +6,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { App } from "./App";
-import { About } from "./App";
-import { Contact } from "./App";
+import { App, About, Contact } from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
