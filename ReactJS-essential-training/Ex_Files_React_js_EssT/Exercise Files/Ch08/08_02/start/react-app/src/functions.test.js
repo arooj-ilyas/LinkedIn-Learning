@@ -6,6 +6,8 @@
 - Callback function holds another function inside of it called Expect
 */
 
+import timesTwo from "./functions";
+
 test("Multiples by two", () => {
   expect();
 });
