@@ -1,3 +1,7 @@
+/*
+- Create a child page for our About component, working with nested links here
+*/
+
 import "./App.css";
 import { Link } from "react-router-dom";
 
@@ -22,6 +26,14 @@ export function About() {
         <Link to="/contact">Contact</Link>
       </nav>
       <h1>About Us</h1>
+    </div>
+  );
+}
+
+export function History() {
+  return (
+    <div>
+      <h1>Our History</h1>
     </div>
   );
 }
