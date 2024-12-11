@@ -9,5 +9,5 @@
 import timesTwo from "./functions";
 
 test("Multiples by two", () => {
-  expect(timesTwo(4)).toBe(8);
+  expect(timesTwo(4)).toBe(8); // write out a matcher with the expected output -> https://jestjs.io/docs/using-matchers
 });
