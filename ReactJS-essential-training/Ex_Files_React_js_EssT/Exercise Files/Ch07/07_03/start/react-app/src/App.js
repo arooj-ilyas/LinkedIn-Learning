@@ -34,6 +34,10 @@ export function About() {
 export function Contact() {
   return (
     <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
       <h1>Contact Us</h1>
     </div>
   );
