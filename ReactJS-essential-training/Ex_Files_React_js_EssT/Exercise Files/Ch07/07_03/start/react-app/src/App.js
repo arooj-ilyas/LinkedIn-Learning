@@ -1,5 +1,5 @@
 /*
-- We want to be able to link to different components without manually typing endpoint into browser
+- We want to be able to link to different components without manually typing endpoint into browser to allow user to navigate between different pages
 - Reason we are importing from react-router-dom is because we are using the DOM/brownser to create this web application
   - There are also react-router tools for React Native (mobile apps) -> each split into its on package
 */
