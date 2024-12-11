@@ -24,8 +24,6 @@ export function Contact() {
   );
 }
 
-function App() {
+export function App() {
   return <Home />;
 }
-
-export default App;
