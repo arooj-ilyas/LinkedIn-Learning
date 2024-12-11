@@ -1,3 +1,5 @@
+// You can use command npm test to run all of the tests within the app
+
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
 
