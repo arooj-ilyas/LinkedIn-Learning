@@ -1,4 +1,9 @@
+/*
+- We want to be able to link to different components without manually typing endpoint into browser
+*/
+
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
