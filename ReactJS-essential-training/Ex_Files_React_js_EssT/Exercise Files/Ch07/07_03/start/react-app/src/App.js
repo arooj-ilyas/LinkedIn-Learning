@@ -22,6 +22,10 @@ function Home() {
 export function About() {
   return (
     <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
       <h1>About Us</h1>
     </div>
   );
