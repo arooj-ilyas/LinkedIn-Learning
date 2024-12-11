@@ -11,8 +11,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
+    {/* Within this <Routes></Routes> is where we set up and configure all the routes we want to display */}
     <Routes>
-      <App />
+      <Route path="/" element={<App />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
