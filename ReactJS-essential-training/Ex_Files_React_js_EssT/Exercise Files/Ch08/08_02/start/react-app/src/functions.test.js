@@ -9,5 +9,5 @@
 import timesTwo from "./functions";
 
 test("Multiples by two", () => {
-  expect();
+  expect(timesTwo(4)).toBe(8);
 });
