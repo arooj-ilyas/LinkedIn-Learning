@@ -31,6 +31,7 @@ export function About() {
       </nav>
       <h1>About Us</h1>
       <Outlet />
+      {/* History will only display when url /about/history, otherwise only /about will appear */}
     </div>
   );
 }
