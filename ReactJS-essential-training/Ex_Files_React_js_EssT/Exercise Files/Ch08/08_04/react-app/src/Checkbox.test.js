@@ -14,6 +14,6 @@ test("Selecting checked box should change value to true", () => {
   const checkbox = getByLabelText(/not checked/i);
 
   // we want to automate the process of firing an event on this checkbox, e.g. so test can interact with dom and 'click' checkbox
-  fireEvent.click(checkbox);
+  fireEvent.click(checkbox); // triger an event change
   expect(checkbox.checked).toEqual(true);
 });
