@@ -27,7 +27,7 @@ function Star({ selected = false }) {
 
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
 function StarRating({ totalStars = 5 }) {
-  const [selectedStars, setSelectedStars] = useState(false);
+  const [selectedStars, setSelectedStars] = useState(0);
   return createArray(totalStars).map((n, i) => <Star key={i} />);
 }
 
