@@ -37,7 +37,7 @@ function StarRating({ totalStars = 5 }) {
           key={i}
           selected={selectedStars > i}
           onSelect={() => {
-            setSelectedStars(i + 1);
+            setSelectedStars(i + 1); //using this to change the state attached to each individual star in the array
           }}
         />
       ))}
