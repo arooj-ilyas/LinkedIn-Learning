@@ -12,33 +12,12 @@
 
 // for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
 
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
-  const [sound, setSound] = useState("");
-  const [color, setColor] = useState("#000000");
-
-  // handle submitting the form -> want to prevent page from reloading as soon as form is submitting ('ADD' is pressed)
-  const submit = (e) => {
-    e.preventDefault();
-    const soundValue = sound.current.value; //.current.value is given to use by useRef fn
-    const colorValue = color.current.value;
-    alert(`${soundValue} sounds like ${colorValue}`);
-    // once alert is made and user has hit ok, we want fields to clear
-    sound.current.value = "";
-    color.current.value = "";
-  };
-
-  return (
-    <form onSubmit={submit}>
-      {/* attach to form element using ref={name of ref}*/}
-      <input ref={sound} type="text" placeholder="Sound..." />
-      <input ref={color} type="color" />
-      <button>ADD</button>
-    </form>
-  );
+  return <p>Hello</p>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
