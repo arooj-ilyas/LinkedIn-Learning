@@ -21,14 +21,24 @@ import { FaStar } from "react-icons/fa";
 const createArray = (length) => [...Array(length)];
 
 // this component is what makes up all of the star rating components
-function Star({ selected = false }) {
-  return <FaStar color={selected ? "red" : "gray"} />;
+function Star({ selected = false, onSelect }) {
+  return (
+    <FaStar color={selected ? "red" : "gray"} onClick={onSelect} size={30} />
+  );
 }
 
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
 function StarRating({ totalStars = 5 }) {
-  const [selectedStars, setSelectedStars] = useState(0);
-  return createArray(totalStars).map((n, i) => <Star key={i} />);
+  const [selectedStars, setSelectedStars] = useState(0); //we need to supply this state variable to each one of the stars
+  return createArray(totalStars).map((n, i) => (
+    <Star
+      key={i}
+      selected={selectedStars > i}
+      onSelect={() => {
+        setSelectedStars(i + 1);
+      }}
+    />
+  ));
 }
 
 function App() {
