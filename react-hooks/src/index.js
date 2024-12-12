@@ -26,7 +26,7 @@ function Star() {
 }
 
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
-function StarRating({ totalStars }) {
+function StarRating({ totalStars = 5 }) {
   return createArray(totalStars).map((n, i) => <Star key={i} />);
 }
 
