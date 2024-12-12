@@ -12,39 +12,24 @@
 
 // for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
 
-import React, { useState, useEffect } from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users`)
-      .then((response) => response.json())
-      .then(setData);
-  }, []);
-
-  if (data) {
-    return (
-      <div>
-        <ul>
-          {data.map((user) => (
-            <li key={user.id}>{user.login}</li>
-          ))}
-        </ul>
-        <button
-          onClick={() => {
-            setData([]);
-          }}
-        >
-          Remove Users
-        </button>
-      </div>
-    );
-  }
-
-  return <p>No Users</p>;
+  const [number, setNumber] = useReducer(
+    (number, newNumber) => number + newNumber,
+    0
+  );
+  return (
+    <h1
+      onClick={() => {
+        setNumber(1);
+      }}
+    >
+      {number}
+    </h1>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
