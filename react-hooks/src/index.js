@@ -17,9 +17,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
+  // we want to track whatever the user inputs into the text field; in this case we wanna catalogue a sound the user inputs, and whatever we think the closest color to that sound may be
+  // we want to be able to 'reach out' to the form element and grab whatever the user types in
   return (
     <form>
-      <input type="text" />
+      <input type="text" placeholder="Sound..." />
       <input type="color" />
       <button>ADD</button>
     </form>
