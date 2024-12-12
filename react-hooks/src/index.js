@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <form>
+    <form onSubmit={submit}>
       {/* attach to form element using ref={name of ref}*/}
       <input ref={sound} type="text" placeholder="Sound..." />
       <input ref={color} type="color" />
