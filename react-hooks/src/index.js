@@ -18,7 +18,10 @@ import "./index.css";
 
 function App() {
   // we want to track whatever the user inputs into the text field; in this case we wanna catalogue a sound the user inputs, and whatever we think the closest color to that sound may be
-  // we want to be able to 'reach out' to the form element and grab whatever the user types in
+  // we want to be able to 'reach out' to the form element and grab whatever the user types in, and access this somewhere
+  const sound = useRef();
+  const color = useRef();
+
   return (
     <form>
       <input type="text" placeholder="Sound..." />
