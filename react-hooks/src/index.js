@@ -27,11 +27,20 @@ function App() {
 
   if (data) {
     return (
-      <ul>
-        {data.map((user) => (
-          <li key={user.id}>{user.login}</li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {data.map((user) => (
+            <li key={user.id}>{user.login}</li>
+          ))}
+        </ul>
+        <button
+          onClick={() => {
+            setData([]);
+          }}
+        >
+          Remove Users
+        </button>
+      </div>
     );
   }
 
