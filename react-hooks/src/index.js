@@ -30,15 +30,22 @@ function Star({ selected = false, onSelect }) {
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
 function StarRating({ totalStars = 5 }) {
   const [selectedStars, setSelectedStars] = useState(0); //we need to supply this state variable to each one of the stars
-  return createArray(totalStars).map((n, i) => (
-    <Star
-      key={i}
-      selected={selectedStars > i}
-      onSelect={() => {
-        setSelectedStars(i + 1);
-      }}
-    />
-  ));
+  return (
+    <>
+      {createArray(totalStars).map((n, i) => (
+        <Star
+          key={i}
+          selected={selectedStars > i}
+          onSelect={() => {
+            setSelectedStars(i + 1);
+          }}
+        />
+      ))}
+      <p>
+        {selectedStars} of {totalStars}
+      </p>
+    </>
+  );
 }
 
 function App() {
