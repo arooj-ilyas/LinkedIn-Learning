@@ -22,10 +22,19 @@ function App() {
   const sound = useRef();
   const color = useRef();
 
+  // handle submitting the form -> want to prevent page from reloading as soon as form is submitting ('ADD' is pressed)
+  const submit = (e) => {
+    e.preventDefault();
+    const soundValue = sound.current.value; //.current.value is given to use by useRef fn
+    const colorValue = color.current.value;
+    alert(`${soundValue} sounds like ${colorValue}`);
+  };
+
   return (
     <form>
-      <input type="text" placeholder="Sound..." />
-      <input type="color" />
+      {/* attach to form element using ref={name of ref}*/}
+      <input ref={sound} type="text" placeholder="Sound..." />
+      <input ref={color} type="color" />
       <button>ADD</button>
     </form>
   );
