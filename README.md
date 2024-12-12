@@ -30,4 +30,6 @@ _Note: At the time of this course React v18 was being used, this course has been
 
 ### Lessons learnt:
 
--
+- Hooks allow you to add state to function components and abstract logic into seperate functions
+- Any hook from react has to start with prefix 'use' (e.g. useState, useReducer, useEffect)
+- Good practice to use functions rather than classes when creating components (classes could be removed in later React versions)
