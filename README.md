@@ -6,6 +6,7 @@ GOAL = refactor each 'start' file within the chapter to look like the 'finish' f
 ## React.js Essential Training
 
 https://www.linkedin.com/learning/react-js-essential-training-14836121/adding-react-to-your-project?autoSkip=true&resume=false
+
 Deployed app - https://extraordinary-paprenjak-1ed81f.netlify.app/
 
 ### Lessons learnt:
