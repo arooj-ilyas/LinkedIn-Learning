@@ -21,8 +21,8 @@ import { FaStar } from "react-icons/fa";
 const createArray = (length) => [...Array(length)];
 
 // this component is what makes up all of the star rating components
-function Star() {
-  return <FaStar />;
+function Star({ selected = false }) {
+  return <FaStar color={selected ? "red" : "gray"} />;
 }
 
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
