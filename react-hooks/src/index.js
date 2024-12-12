@@ -21,6 +21,7 @@ function App() {
     <form>
       <input type="text" />
       <input type="color" />
+      <button>ADD</button>
     </form>
   );
 }
