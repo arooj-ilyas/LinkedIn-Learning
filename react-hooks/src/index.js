@@ -12,16 +12,13 @@
 
 // for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
 
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
-  // we want to track whatever the user inputs into the text field; in this case we wanna catalogue a sound the user inputs, and whatever we think the closest color to that sound may be
-  // we want to be able to 'reach out' to the form element and grab whatever the user types in, and access this somewhere
-  // this allows us to check in with the values of the form elements (something you might be able to pass to db or external process) and capture user input
-  const sound = useRef();
-  const color = useRef();
+  const [sound, setSound] = useState("");
+  const [color, setColor] = useState("#000000");
 
   // handle submitting the form -> want to prevent page from reloading as soon as form is submitting ('ADD' is pressed)
   const submit = (e) => {
