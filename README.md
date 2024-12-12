@@ -3,11 +3,12 @@
 Series of LinkedIn courses and affiliated exercise files worked on to add to skillsets
 GOAL = refactor each 'start' file within the chapter to look like the 'finish' file
 
-React.js Essential Training - https://www.linkedin.com/learning/react-js-essential-training-14836121/adding-react-to-your-project?autoSkip=true&resume=false
+## React.js Essential Training
 
+https://www.linkedin.com/learning/react-js-essential-training-14836121/adding-react-to-your-project?autoSkip=true&resume=false
 Deployed app - https://extraordinary-paprenjak-1ed81f.netlify.app/
 
-Lessons learnt:
+### Lessons learnt:
 
 - A solid foundation for starting to work on react projects
 - What is react?
@@ -19,3 +20,13 @@ Lessons learnt:
 - React Router
 - React Testing Library and Jest
 - Deployment
+
+## React Hooks
+
+https://www.linkedin.com/learning/react-hooks
+
+_Note: At the time of this course React v18 was being used, this course has been adjusted on my end to utilize v19 to keep up to date with latest version releases whilst still learning basic React fundamentals._
+
+### Lessons learnt:
+
+-
