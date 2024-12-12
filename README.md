@@ -33,3 +33,17 @@ _Note: At the time of this course React v18 was being used, this course has been
 - Hooks allow you to add state to function components and abstract logic into seperate functions
 - Any hook from react has to start with prefix 'use' (e.g. useState, useReducer, useEffect)
 - Good practice to use functions rather than classes when creating components (classes could be removed in later React versions)
+- Array descturturing -> const [first, second, third] = ["Ali", "Anna", "Alex"]
+- How to build a checkbox using useState
+- Working with state in a component tree
+- useEffect allows you to perform 'side effects' in function components
+- Dependancy arrays in useEffects and what to put inside of them based on when you want the side effect to occur
+- Fetching data with useEffect
+- Any `<li>` always needs a unuqiue key attribute
+- useReducer takes in two arguments (not just an initial state like useState) -> first is a fn that returns a new state, second is initial state
+- How to refactor useState to useReducer and dispatch actions
+- How to manage form inputs with useRef -> allows use to reach out to a component and determine its value
+- How to create controlled components using useState
+- How to use custom hooks; reusing form logic with custom hooks, data fetching with a fetch hook
+- Placing and retrieving data using useContext
+- How to build a fetch component

@@ -15,35 +15,30 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import { useInput } from "./useInput";
 
 function App() {
-  const [sound, setSound] = useState("");
-  const [color, setColor] = useState("#000000");
+  // now instead of using useState, we can use our custom
+  // const [sound, setSound] = useState("");
+  // const [color, setColor] = useState("#000000");
+  const [titleProps, resetTitle] = useInput("");
+  const [colorProps, resetColor] = useInput("#000000");
 
   // handle submitting the form -> want to prevent page from reloading as soon as form is submitting ('ADD' is pressed)
   const submit = (e) => {
     e.preventDefault();
-    alert(`${sound} sounds like ${color}`);
+    alert(`${titleProps.value} sounds like ${colorProps.value}`);
     // once alert is made and user has hit ok, we want fields to clear
-    setSound("");
-    setColor("#000000");
+    resetColor();
+    resetTitle();
   };
 
   return (
     <form onSubmit={submit}>
       {/* instead of ref={name}, we will attach to form element using value={name*/}
       {/* now our inputs are in charge of changing the state, not the useRef */}
-      <input
-        value={sound}
-        type="text"
-        placeholder="Sound..."
-        onChange={(e) => setSound(e.target.value)}
-      />
-      <input
-        value={color}
-        type="color"
-        onChange={(e) => setColor(e.target.value)}
-      />
+      <input {...titleProps} type="text" placeholder="Sound..." />
+      <input {...colorProps} type="color" />
       <button>ADD</button>
     </form>
   );
