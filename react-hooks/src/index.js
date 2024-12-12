@@ -17,7 +17,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
-  return <></>;
+  return (
+    <form>
+      <input type="text" />
+      <input type="color" />
+    </form>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
