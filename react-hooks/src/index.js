@@ -26,12 +26,12 @@ function Star() {
 }
 
 // this component is going to return a certain number of stars based on the rating, and use that createArray function to display the stars
-function StarRating() {
-  return createArray(5).map((n, i) => <Star key={i} />);
+function StarRating({ totalStars }) {
+  return createArray(totalStars).map((n, i) => <Star key={i} />);
 }
 
 function App() {
-  return <StarRating />;
+  return <StarRating totalStars={10} />;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
