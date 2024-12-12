@@ -8,20 +8,19 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// for the sake of keeping things simple for this app, we won't import the app, we will just create it here
-// we want to add state to our app component
+// for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
 function App() {
-  const [status, setStatus] = useState("Not Delivered");
+  const [checked, setChecked] = useState(false);
   return (
     <div>
-      <h1>This package is: {status}</h1>
-      <button
-        onClick={() => {
-          setStatus("Delivered");
+      <input
+        type="checkbox"
+        value={checked}
+        onChange={() => {
+          setChecked((checked) => !checked);
         }}
-      >
-        Deliver
-      </button>
+      />
+      <label>{checked ? "checked" : "not checked"}</label>
     </div>
   );
 }
