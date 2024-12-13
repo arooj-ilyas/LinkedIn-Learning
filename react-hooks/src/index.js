@@ -13,10 +13,11 @@
   - in these situations, we should place the data in the context, rather than sending it up and down the tree so that all of the child components wil lknow the values that are being passed down
 */
 
-import React, { createContext, useContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+// inside of this app component, we want to display some data from an api and handle the different states using the useFetch hook we built before
 function App() {
   return (
     <div>
