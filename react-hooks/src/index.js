@@ -8,25 +8,33 @@
 - useEffect side effects are typically console.logs or some kind of DOM api (e.g. history or window)
 - typically to use useEffect, you need to set up a state variable
 - useEffect takes in a function and by default runs after each render and each update, using [] makes it run only on first render
-*/
 
-// for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
-
-/*
 - there are also times when we want values to be available to the entire component tree
   - in these situations, we should place the data in the context, rather than sending it up and down the tree so that all of the child components wil lknow the values that are being passed down
 */
-import React from "react";
+
+import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import App from "./App";
 
-function App() {
-  return <div>Hello</div>;
-}
+// create this context (i.e. little container) that is going to contain some data that can be consumed by any of the components that are a part of the component tree
+export const TreesContext = createContext();
+
+// goal -> we want to make all of this data accessible to the entire app
+const trees = [
+  { id: "1", type: "Maple" },
+  { id: "2", type: "Oak" },
+  { id: "3", type: "Family" },
+  { id: "4", type: "Component" },
+];
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // we want to wrap the entire app in that TreesContext.Provider we created to provide the data to the App component and anything nested below it
+  // we need to supply this context with a property called value, containing the data you want to provide so that component has access to that data
+  // now the data will be accessible inside of the component
+  <TreesContext.Provider value={{ trees }}>
     <App />
-  </React.StrictMode>
+  </TreesContext.Provider>
 );

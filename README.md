@@ -47,3 +47,5 @@ _Note: At the time of this course React v18 was being used, this course has been
 - How to use custom hooks; reusing form logic with custom hooks, data fetching with a fetch hook
 - Placing and retrieving data using useContext
 - How to build a fetch component
+- Passing data down to child and nested components via the provider -> placing data in context
+- Reading from context using a hook

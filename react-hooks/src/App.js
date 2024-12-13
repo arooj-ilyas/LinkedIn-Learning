@@ -8,12 +8,23 @@
     - If we only care for position 3 -> const [, , third] = ["Ali", "Anna", "Alex"]
 */
 
+// we want to take that data from context (in index.js) and make it accessible to this component
+// now ANY component which is part of the app, we're going to be able to read the value of 'trees' simply by calling useContext and giving it TreesContext
 import "./App.css";
+import { TreesContext } from ".";
+import { useContext } from "react";
 
-function App({ name }) {
+function App() {
+  const { trees } = useContext(TreesContext);
+
   return (
-    <div className="App">
-      <h1>Hello {name}!</h1>
+    <div>
+      <h1>Tree's I have heard of:</h1>
+      <ul>
+        {trees.map((tree) => (
+          <li key={tree.id}>{tree.type}</li>
+        ))}
+      </ul>
     </div>
   );
 }
