@@ -23,4 +23,6 @@ export function useFetch(uri) {
       .then(() => setLoading(false)) // we want to change loading state to be false once data is fetched
       .catch(setError); // place a catch incase something goes wrong to set the error state
   }, []); // only want useEffect to be called when theres a new uri or page first renders
+
+  return { data, loading, error };
 }
