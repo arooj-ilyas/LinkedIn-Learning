@@ -16,28 +16,14 @@
 import React, { createContext, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 
-// create this context (i.e. little container) that is going to contain some data that can be consumed by any of the components that are a part of the component tree
-const TreesContext = createContext();
-
-//^ we can transform this into a custom hook to make it even more reusable
-export const useTrees = () => useContext(TreesContext);
-
-// goal -> we want to make all of this data accessible to the entire app
-const trees = [
-  { id: "1", type: "Maple" },
-  { id: "2", type: "Oak" },
-  { id: "3", type: "Family" },
-  { id: "4", type: "Component" },
-];
+function App() {
+  return (
+    <div>
+      <h1>Hello world</h1>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  // we want to wrap the entire app in that TreesContext.Provider we created to provide the data to the App component and anything nested below it
-  // we need to supply this context with a property called value, containing the data you want to provide so that component has access to that data
-  // now the data will be accessible inside of the component
-  <TreesContext.Provider value={{ trees }}>
-    <App />
-  </TreesContext.Provider>
-);
+root.render(<App />);
