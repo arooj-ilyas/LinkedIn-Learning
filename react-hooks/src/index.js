@@ -13,13 +13,16 @@
   - in these situations, we should place the data in the context, rather than sending it up and down the tree so that all of the child components wil lknow the values that are being passed down
 */
 
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
 // create this context (i.e. little container) that is going to contain some data that can be consumed by any of the components that are a part of the component tree
-export const TreesContext = createContext();
+const TreesContext = createContext();
+
+//^ we can transform this into a custom hook to make it even more reusable
+export const useTrees = () => useContext(TreesContext);
 
 // goal -> we want to make all of this data accessible to the entire app
 const trees = [

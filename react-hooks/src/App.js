@@ -11,11 +11,13 @@
 // we want to take that data from context (in index.js) and make it accessible to this component
 // now ANY component which is part of the app, we're going to be able to read the value of 'trees' simply by calling useContext and giving it TreesContext
 import "./App.css";
-import { TreesContext } from ".";
-import { useContext } from "react";
+// import { TreesContext } from ".";
+// import { useContext } from "react";
+import { useTrees } from ".";
 
 function App() {
-  const { trees } = useContext(TreesContext);
+  // const { trees } = useContext(TreesContext);
+  const { trees } = useTrees();
 
   return (
     <div>
