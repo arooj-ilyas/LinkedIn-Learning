@@ -12,30 +12,16 @@
 
 // for the sake of keeping things simple for this app, we won't import the app, we will just create it here; want to add state to our app component
 
+/*
+- there are also times when we want values to be available to the entire component tree
+  - in these situations, we should place the data in the context, rather than sending it up and down the tree so that all of the child components wil lknow the values that are being passed down
+*/
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { useInput } from "./useInput";
 
 function App() {
-  // now instead of using useState, we can use our custom hook
-  const [titleProps, resetTitle] = useInput("");
-  const [colorProps, resetColor] = useInput("#000000");
-
-  const submit = (e) => {
-    e.preventDefault();
-    alert(`${titleProps.value} sounds like ${colorProps.value}`);
-    resetColor();
-    resetTitle();
-  };
-
-  return (
-    <form onSubmit={submit}>
-      <input {...titleProps} type="text" placeholder="Sound..." />
-      <input {...colorProps} type="color" />
-      <button>ADD</button>
-    </form>
-  );
+  return <div>Hello</div>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
