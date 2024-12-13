@@ -16,15 +16,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import { useFetch } from "./useFetch";
 
 // inside of this app component, we want to display some data from an api and handle the different states using the useFetch hook we built before
-function App() {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+// login is going to be the prop we pass in here, so users can see the data for their own login dynamically
+function App({ login }) {
+  // our useFetch hook takes in the uri of the api we are working with
+  const { loading, error, data } = useFetch(
+    `https://api.github.com/users/${login}`
   );
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<App login="arooj-ilyas" />);
